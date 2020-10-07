@@ -71,3 +71,18 @@ let array = [object]
 
 // 3. Create an array called "newsfeed" which contains 3 objects with properties "username" and "timeline".
 
+let newsFeed = [
+    {
+        username: "Chase",
+        timeline: "I am eating pizza"
+    },
+    {
+        username: "Summer",
+        timeline: "I am eating cake"
+    },
+    {
+        username: "Bob",
+        timeline: "I am eating ice cream"
+    }
+]
+
