@@ -67,7 +67,7 @@ let object = {
 
 // 2. Create an array which contains the object you have made above and name the array "database".
 
-let array = [object]
+let database = [object]
 
 // 3. Create an array called "newsfeed" which contains 3 objects with properties "username" and "timeline".
 
