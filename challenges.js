@@ -18,3 +18,8 @@ if (Number(age) < 18) {
 //BONUS: Instead of using the prompt. Now, only use console.log and make the checkDriverAge() function accept an argument of age, so that if you enter:
 // checkDriverAge(92);
 // it returns "Powering On. Enjoy the ride!"
+
+func checkDriverAge() {
+    let age = prompt("What is your age?")
+    return age
+}
