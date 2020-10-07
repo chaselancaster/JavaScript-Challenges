@@ -23,3 +23,9 @@ func checkDriverAge() {
     let age = prompt("What is your age?")
     return age
 }
+
+let checkDriverAge2 = function() {
+    let age = prompt("What is your age?")
+    return age
+}
+
