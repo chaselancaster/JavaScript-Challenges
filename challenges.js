@@ -105,3 +105,21 @@ function sumTwoSmallestNumbers(numbers) {
   let secondLowestNum = sortedArray[1]
   return lowestNum + secondLowestNum
 }
+
+// Trying the same problem without sort
+
+function sumTwoSmallestNumbers(numbers) {
+  let firstNum = numbers[1] 
+  let secondNum = numbers[2]
+  let indexOfSmallestOne = 0
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < firstNum) {
+      firstNum = numbers[i]
+      indexOfSmallestOne = i
+    }
+    if (numbers[i] < secondNum && indexOfSmallestOne !== i ) {
+      secondNum = numbers[i]
+    }
+  }
+  return firstNum + secondNum
+}
