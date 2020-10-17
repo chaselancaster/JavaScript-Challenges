@@ -123,3 +123,26 @@ function sumTwoSmallestNumbers(numbers) {
   }
   return firstNum + secondNum
 }
+
+function sumTwoSmallestNumbers(numbers) {
+  let firstNum = numbers[0];
+  let secondNum = numbers[1];
+  let indexOfSmallestOne = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < firstNum) {
+      //Passing this test means we have a new smallest number so we can assume firstNum is now the secondNum
+      //firstNum now gets the new smallest number 
+      
+      secondNum = firstNum; /* assigns the secondNum without waiting to pass the second if statement */
+      firstNum = numbers[i];
+      indexOfSmallestOne = i;
+      
+    }
+    //Now when we get to here and if our first test doesn't pass, we only have to worry about the current array value being less than our secondNum
+    //If this doesn't pass -- no worries, the second smallest number was already assigned
+    if (numbers[i] < secondNum && indexOfSmallestOne !== i) {
+      secondNum = numbers[i];
+    }
+  }
+  return firstNum + secondNum;
+}
