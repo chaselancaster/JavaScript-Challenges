@@ -146,3 +146,27 @@ function sumTwoSmallestNumbers(numbers) {
   }
   return firstNum + secondNum;
 }
+
+
+
+// Eloquent JavaScript Chapter 2 Exercises
+
+// Looping a triangle
+// Write a loop that makes seven calls to console.log to output the following triangle:
+// #
+// ##
+// ###
+// ####
+// #####
+// ######
+// #######
+
+const triangle = () => {
+  let triangle = ''
+  for (let i = 0; i <= 6; i++) {
+    triangle += '#'
+    console.log(triangle)
+  }
+}
+
+triangle();
