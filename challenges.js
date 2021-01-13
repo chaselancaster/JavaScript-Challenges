@@ -171,6 +171,8 @@ const triangle = () => {
 
 triangle();
 
+
+
 // FizzBuzz
 // Write a program that uses console.log to print all the numbers from 1 to 100, with two exceptions. For numbers divisible by 3, print "Fizz" instead of the number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.
 
@@ -191,6 +193,8 @@ const fizzBuzz = () => {
 }
 
 fizzBuzz();
+
+
 
 // Chessboard
 // Write a program that creates a string that represents an 8×8 grid, using newline characters to separate lines. At each position of the grid there is either a space or a "#" character. The characters should form a chessboard.
@@ -252,3 +256,27 @@ function findOdd(A) {
   }
 }
 
+
+
+
+// Code Wars - Find the smallest integer in the array
+// https://www.codewars.com/kata/55a2d7ebe362935a210000b2/train/javascript
+
+// Given an array of integers your solution should find the smallest integer.
+
+// For example:
+
+// Given [34, 15, 88, 2] your solution will return 2
+// Given [34, -345, -1, 100] your solution will return -345
+// You can assume, for the purpose of this kata, that the supplied array will not be empty.
+class SmallestIntegerFinder {
+  findSmallestInt(args) {
+    let smallestNum = args[0]
+    for (let i = 0; i < args.length; i++) {
+      if (args[i] < smallestNum) {
+        smallestNum = args[i]
+      }
+    }
+    return smallestNum
+  }
+}
