@@ -228,3 +228,27 @@ chessboard();
 
 
 
+// Code Wars - Find the odd int
+// https://www.codewars.com/kata/54da5a58ea159efa3
+
+// Given an array of integers, find the one that appears an odd number of times.
+
+// There will always be only one integer that appears an odd number of times.
+
+function findOdd(A) {
+  // loop through the initial array
+  for (let i = 0; i < A.length; i++) {
+    let count = 0
+    let num = A[i]
+    // loop through the array again comparing every number to the index of the first array loop
+    for (let j = 0; j < A.length; j++) {
+      if (num === A[j]) {
+        count ++
+      }
+    }
+    if (count % 2 !== 0) {
+      return num
+    }
+  }
+}
+
