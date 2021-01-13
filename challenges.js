@@ -299,3 +299,26 @@ function check(a, x) {
   }
   return false
 }
+
+
+
+// Code Wars - Isograms
+// https://www.codewars.com/kata/54ba84be607a92aa900000f1/train/javascript
+
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+// isIsogram("Dermatoglyphics") == true
+// isIsogram("aba") == false
+// isIsogram("moOse") == false // -- ignore letter case
+
+function isIsogram(str){
+  let splitStr = str.toLowerCase().split('')
+  for (let i = 0; i < splitStr.length; i++) {
+    for (let j = 0; j < splitStr.length; j++) {
+      if (splitStr[i] === splitStr[j] && i !== j) {
+        return false
+      }
+    }
+  }
+  return true
+}
