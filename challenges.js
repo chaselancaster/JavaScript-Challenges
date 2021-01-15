@@ -322,3 +322,49 @@ function isIsogram(str){
   }
   return true
 }
+
+
+
+// Travel Directions Reduction
+// You're travelling in the desert, and you're exhausted. You have a list of directions that you need to follow to get to your destination. They look a lot like this:
+
+//   ['N', 'N', 'W', 'S', 'E', 'W', 'S']
+// You're a smart person right? You realize that most of these directions are useless. North and south cancel out, and east and west cancel out. You could really just simplify these directions to:
+
+//   ['W']
+// So you walk one unit west, and arrive at your destination without dying of thirst.
+
+// Requirements
+// You need to write a function called reduceDirections() that will take an array of directions represented as characters. You will also return an array of characters, but with the most reduced directions.
+
+// You may only move north, south, east, and west
+// Ignore any instructions other than 'N', 'S', 'E', or 'W'
+// Each instruction means to move one unit in that direction
+// Return an empty array if you're somehow already at your destination but didn't even notice!
+
+function reduceDirections(directions) {
+	let arr = []
+ 	for (let i = 0; i <= directions.length; i++) {
+  
+  	if (directions[i] === 'N' || directions[i] === 'E' || directions[i] === 'S' || directions[i] === 'W') {
+    	arr = directions
+    } else {
+    directions.splice(i, 1)
+    arr = directions
+    }
+    
+    for (let j = 0; j <= directions.length; j++) {
+    console.log(arr, '<- arr')
+    	if (directions[i] === 'N' && directions[j] === 'S' || directions[i] === 'S' && directions[j] === 'N'  ) {
+      	arr.splice(i, 1)
+        arr.splice(j - 1, 1)
+      } else if (directions[i] === 'E' && directions[j] === 'W' || directions[i] === 'W' && directions[j] === 'E') {
+      	arr.splice(i, 1)
+        arr.splice(j - 1, 1)
+      }
+    }
+    
+  }
+  
+  return arr
+}
