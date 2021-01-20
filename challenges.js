@@ -409,3 +409,27 @@ function checkPalindrome(inputString) {
       return false
   }
 }
+
+
+
+// Code Signal Arcade - adjacentElementsProduct
+
+// Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
+
+// Ex: For inputArray = [3, 6, -2, -5, 7, 3], the output should be
+// adjacentElementsProduct(inputArray) = 21.
+// 7 and 3 produce the largest product.
+
+function adjacentElementsProduct(inputArray) {
+  // Set array to hold all of the products from the given array
+  let arrayOfSums = []
+  // Set variable to hold the biggestNum
+  let biggestNum = 0
+  // Initial loop over array
+  for (let i = 0; i < inputArray.length - 1; i++) {
+      let sum = inputArray[i] * inputArray[i + 1]
+      arrayOfSums.push(sum)
+  }
+  biggestNum = Math.max(...arrayOfSums)
+  return biggestNum
+}
