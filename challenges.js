@@ -393,3 +393,19 @@ function centuryFromYear(year) {
   }
   return century
 }
+
+
+
+// Code Signal Arcade - checkPalindrome
+
+// Given the string, check if it is a palindrome.
+
+function checkPalindrome(inputString) {
+  let originalString = inputString
+  let reversedString = inputString.split('').reverse().join('')
+  if (originalString === reversedString) {
+      return true
+  } else {
+      return false
+  }
+}
