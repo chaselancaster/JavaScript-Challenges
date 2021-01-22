@@ -369,6 +369,37 @@ function reduceDirections(directions) {
   return arr
 }
 
+// better answer to the same question:
+
+function reduceDirections2(directions) {
+  let arr = []
+  let opposites = {
+    N: 'S',
+    E: 'W',
+    S: 'N',
+    W: 'E'
+  }
+  
+   for (let i = 0; i <= directions.length; i++) {
+    // check if opposite direction is in opposites
+		if (opposites[directions[i]]) {
+      // check to see if opposite exists in the array
+    	let direction = arr.indexOf(opposites[directions[i]])
+      console.log(direction)
+      if (direction === -1) {
+      // if it does not exist, use unshift to place the direction at the front of array since push didn't work
+      	arr.unshift(directions[i])
+      } else {
+      // If the opposite does exist in the array, remove it
+      	arr.splice(direction, 1)
+      }
+    }
+   }
+   
+   return arr
+ 
+}
+
 
 
 // Code Signal Arcade - add
