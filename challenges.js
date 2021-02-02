@@ -661,3 +661,37 @@ const defangIPaddr = function(address) {
   let joinedAddress = splitAddress.join('')
   return joinedAddress
 };
+
+
+
+// Leetcode - 1470. Shuffle the Array
+// https://leetcode.com/problems/shuffle-the-array/
+
+// Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
+
+// Return the array in the form [x1,y1,x2,y2,...,xn,yn].
+
+// Ex:
+// Input: nums = [2,5,1,3,4,7], n = 3
+// Output: [2,3,5,4,1,7] 
+// Explanation: Since x1=2, x2=5, x3=1, y1=3, y2=4, y3=7 then the answer is [2,3,5,4,1,7].
+
+const shuffle = function(nums, n) {
+  let arrayCount = n * 2
+  let firstHalfOfArray = []
+  let secondHalfOfArray = []
+  let finalArray = []
+  // divide the array in half
+  for (let i = 0; i < arrayCount / 2; i++) {
+      firstHalfOfArray.push(nums[i])
+  }
+  for (let j = arrayCount / 2; j < nums.length; j++) {
+      secondHalfOfArray.push(nums[j])
+  }
+  for (let k = 0; k < arrayCount / 2; k++) {
+      finalArray.push(firstHalfOfArray[k])
+      finalArray.push(secondHalfOfArray[k])
+      console.log(finalArray)
+  }
+  return finalArray
+};
