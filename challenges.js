@@ -757,3 +757,40 @@ const numJewelsInStones = function(jewels, stones) {
   }
   return numOfJewels
 };
+
+
+
+// Leetcode - 1678. Goal Parser Interpretation
+// https://leetcode.com/problems/goal-parser-interpretation/
+
+// You own a Goal Parser that can interpret a string command. The command consists of an alphabet of "G", "()" and/or "(al)" in some order. The Goal Parser will interpret "G" as the string "G", "()" as the string "o", and "(al)" as the string "al". The interpreted strings are then concatenated in the original order.
+
+// Given the string command, return the Goal Parser's interpretation of command.
+
+// Ex: 
+// Input: command = "G()(al)"
+// Output: "Goal"
+// Explanation: The Goal Parser interprets the command as follows:
+// G -> G
+// () -> o
+// (al) -> al
+// The final concatenated result is "Goal".
+
+const interpret = function(command) {
+  // declare array to hold the values
+  let parsedStringArray = []
+  // split the command string
+  let splitCommand = command.split('')
+  // loop to check first character
+  for (let i = 0; i < splitCommand.length; i++) {
+      if (splitCommand[i] === 'G') {
+          parsedStringArray.push('G')
+      } else if (splitCommand[i] === '(' && splitCommand[i + 1] === ')') {
+          parsedStringArray.push('o')
+      } else if (splitCommand[i] === 'a' && splitCommand[i + 1] === 'l') {
+          parsedStringArray.push('al')
+      }
+  }
+  let finalString = parsedStringArray.join('')
+  return finalString
+};
