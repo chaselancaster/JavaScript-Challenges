@@ -726,3 +726,34 @@ const numIdenticalPairs = function(nums) {
   }
   return pairs
 };
+
+
+
+// Leetcode - 771. Jewels and Stones
+// https://leetcode.com/problems/jewels-and-stones/
+
+// You're given strings jewels representing the types of stones that are jewels, and stones representing the stones you have. Each character in stones is a type of stone you have. You want to know how many of the stones you have are also jewels.
+
+// Letters are case sensitive, so "a" is considered a different type of stone from "A".
+
+// Ex: 
+// Input: jewels = "aA", stones = "aAAbbbb"
+// Output: 3
+
+const numJewelsInStones = function(jewels, stones) {
+  // set number of jewels to a variable
+  let numOfJewels = 0
+  // split the jewels
+  let splitJewels = jewels.split('')
+  // split the stones
+  let splitStones = stones.split('')
+  // loop through the stones and compare to jewels and see if there is a match
+  for (let i = 0; i < splitJewels.length; i++) {
+      for (let j = 0; j < splitStones.length; j++) {
+          if (splitJewels[i] == splitStones[j]) {
+              numOfJewels += 1
+          }
+      }
+  }
+  return numOfJewels
+};
