@@ -953,3 +953,29 @@ const smallerNumbersThanCurrent = function(nums) {
   return numsArray
 };
 
+
+
+// Leetcode - 1528. Shuffle String
+// https://leetcode.com/problems/shuffle-string/
+
+// Given a string s and an integer array indices of the same length.
+
+// The string s will be shuffled such that the character at the ith position moves to indices[i] in the shuffled string.
+
+// Return the shuffled string.
+
+// Ex:
+// Input: s = "codeleet", indices = [4,5,6,7,0,2,1,3]
+// Output: "leetcode"
+// Explanation: As shown, "codeleet" becomes "leetcode" after shuffling.
+
+const restoreString = function(s, indices) {
+  // new array to hold the new string once placed correctly
+  let newStringArray = []
+  // loop over indices and push corresponding index in the splitString into the newStringArray
+  for (let i = 0; i < indices.length; i++) {
+      newStringArray[indices[i]] = s[i]
+  }
+  return newStringArray.join('')
+};
+
