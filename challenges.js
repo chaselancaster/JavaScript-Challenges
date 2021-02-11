@@ -1072,3 +1072,35 @@ function countTinyPairs(a , b, k) {
   }
   return tinyPairs
 }
+
+
+
+// Code Signal - All Longest Strings
+// https://app.codesignal.com/arcade/intro/level-3/fzsCQGYbxaEcTr2bL
+
+// Given an array of strings, return another array containing all of its longest strings.
+
+// Example
+
+// For inputArray = ["aba", "aa", "ad", "vcd", "aba"], the output should be
+// allLongestStrings(inputArray) = ["aba", "vcd", "aba"].
+
+function allLongestStrings(inputArray) {
+  // set a variable to store the longest strings in an array
+  let longestStrings = []
+  // set a variable to store the longest length
+  let longestLength = 0
+  // loop over the array of strings
+  for (let i = 0; i < inputArray.length; i++) {
+      if (inputArray[i].length > longestLength) {
+          longestLength = inputArray[i].length
+      }
+  }
+  // loop over again to see which ones match the length
+  for (let j = 0; j < inputArray.length; j++) {
+      if (inputArray[j].length === longestLength) {
+          longestStrings.push(inputArray[j])
+      }
+  }
+  return longestStrings
+}
