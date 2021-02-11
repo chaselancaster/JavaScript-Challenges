@@ -1046,3 +1046,29 @@ function mutateTheArray(n, a) {
   }
   return b
 }
+
+
+
+// Code Signal - countTinyPairs
+
+// You are given two arrays of integers a and b of the same length, and an integer k. We will be iterating through array a from left to right, and simultaneously though array b from right to left, and looking at pairs (x , y) where x is from a and y is from b. Such a pair is called tiny if the concatenation xy is strictly less than k.
+
+// Your task is to return the number of tiny pairs that you'll encounter during the simultaneous iteration through a and b.
+
+function countTinyPairs(a , b, k) {
+  let tinyPairs = 0
+  let bIndex = b.length - 1
+  let firstNum = 0
+  let secondNum = 0
+
+  for (let i = 0; i < a.length; i++) {
+    firstNum = a[i]
+    secondNum = b[bIndex]
+    let total = '' + firstNum + secondNum
+    if (total < k) {
+      tinyPairs++
+    }
+    bIndex--
+  }
+  return tinyPairs
+}
