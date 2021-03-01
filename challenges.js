@@ -1334,3 +1334,40 @@ function alternatingSums(a) {
   return [team1Added, team2Added]
 }
 
+
+
+// Code Signal - Add Border
+// https://app.codesignal.com/arcade/intro/level-4/ZCD7NQnED724bJtjN
+
+// Given a rectangular matrix of characters, add a border of asterisks(*) to it.
+
+// Example
+
+// For
+
+// picture = ["abc",
+//            "ded"]
+// the output should be
+
+// addBorder(picture) = ["*****",
+//                       "*abc*",
+//                       "*ded*",
+//                       "*****"]
+
+function addBorder(picture) {
+  let borderArray = []
+  let border = '*'
+  for (let i = 0; i < picture.length; i++) {
+      let splitElement = picture[i].split('')
+      splitElement.unshift('*')
+      splitElement.push('*')
+      picture[i] = splitElement.join('')
+  }
+  let length = picture[0].length
+  while (border.length < length) {
+      border += '*'
+  }
+  picture.unshift(border)
+  picture.push(border)
+  return picture
+}
