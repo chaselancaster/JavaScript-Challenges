@@ -1262,3 +1262,34 @@ const subtractProductAndSum = function(n) {
   }
   return product - sum
 };
+
+
+
+// Code Signal - reverseInParentheses
+// https://app.codesignal.com/arcade/intro/level-3/9DgaPsE2a7M6M2Hu6
+
+// Write a function that reverses characters in (possibly nested) parentheses in the input string.
+
+// Input strings will always be well-formed with matching ()s.
+
+// Example
+
+// For inputString = "(bar)", the output should be
+// reverseInParentheses(inputString) = "rab";
+// For inputString = "foo(bar)baz", the output should be
+// reverseInParentheses(inputString) = "foorabbaz";
+// For inputString = "foo(bar)baz(blim)", the output should be
+// reverseInParentheses(inputString) = "foorabbazmilb";
+// For inputString = "foo(bar(baz))blim", the output should be
+// reverseInParentheses(inputString) = "foobazrabblim".
+// Because "foo(bar(baz))blim" becomes "foo(barzab)blim" and then "foobazrabblim".
+
+reverseInParentheses = s => {
+  if (s.indexOf('(') == -1) return s;
+  
+  const rev = s.split('(').pop().split(')')[0];
+  console.log(rev)
+  s = s.replace('(' + rev + ')', rev.split("").reverse().join(""));
+  
+  return reverseInParentheses(s);
+}
