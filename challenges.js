@@ -1705,3 +1705,41 @@ const numberOfSteps  = function(num) {
       
   return steps
 };
+
+
+
+// Leet Code - Split a String in Balanced Strings
+// https://leetcode.com/problems/split-a-string-in-balanced-strings/
+
+// Balanced strings are those that have an equal quantity of 'L' and 'R' characters.
+
+// Given a balanced string s, split it in the maximum amount of balanced strings.
+
+// Return the maximum amount of split balanced strings.
+
+ 
+
+// Example 1:
+
+// Input: s = "RLRRLLRLRL"
+// Output: 4
+// Explanation: s can be split into "RL", "RRLL", "RL", "RL", each substring contains same number of 'L' and 'R'.
+
+const balancedStringSplit = function(s) {
+  let count = 0
+  let L = 0
+  let R = 0
+  const splitS = s.split('')
+  for (let i = 0; i < splitS.length; i++) {
+      if (splitS[i] === 'L') {
+          L++
+      }
+      if (splitS[i] === 'R') {
+          R++
+      }
+      if ((L !== 0) && L === R) {
+          count++
+      }
+  }
+  return count
+};
