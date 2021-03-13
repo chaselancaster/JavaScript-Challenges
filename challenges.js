@@ -1817,3 +1817,36 @@ const arrayStringsAreEqual = function(word1, word2) {
       return false
   }
 };
+
+
+
+// Leet Code - Count the Number of Consistent Strings
+// https://leetcode.com/problems/count-the-number-of-consistent-strings/
+
+// You are given a string allowed consisting of distinct characters and an array of strings words. A string is consistent if all characters in the string appear in the string allowed.
+
+// Return the number of consistent strings in the array words.
+
+ 
+
+// Example 1:
+
+// Input: allowed = "ab", words = ["ad","bd","aaab","baa","badab"]
+// Output: 2
+// Explanation: Strings "aaab" and "baa" are consistent since they only contain characters 'a' and 'b'.
+
+function countConsistentStrings(allowed, words) {
+  let count = 0;
+  for (let word of words) {
+      let notAllowed = false;
+      for (let i = 0; i < word.length; i++) {
+          if (allowed.indexOf(word[i]) == -1) {
+               notAllowed = true
+          }
+      }
+      if (notAllowed == false) {
+         count++ 
+      } 
+  }
+  return count
+}
